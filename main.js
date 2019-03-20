@@ -21,7 +21,7 @@ function updateSubmit(form, event) {
         '/pub/access/486.601/update',
         data
     ).then(response => {
-        fetchIndex({ code: ACCESS_CODE })
+        fetchIndex()
         .then(updateClose);
     }).catch(console.error);
 }
@@ -31,7 +31,7 @@ function addSnip(docid) {
         'POST',
         `/pub/access/486.601/${Number(docid)}`,
         { code: ACCESS_CODE }
-    ).then(fetchIndex.bind(null, { code: ACCESS_CODE }))
+    ).then(fetchIndex)
      .catch(console.error);
 }
 
@@ -52,7 +52,7 @@ function submitImage(files, loreid) {
         'PUT',
         '/pub/access/486.601/img/set',
         { code: ACCESS_CODE, id: loreid, img: files[0] }
-    ).then(fetchIndex.bind(null, { code: ACCESS_CODE }))
+    ).then(fetchIndex)
      .catch(console.error);
 }
 
@@ -61,7 +61,7 @@ function deleteImage(loreid) {
         'PUT',
         '/pub/access/486.601/img/set',
         { code: ACCESS_CODE, id: loreid }
-    ).then(fetchIndex.bind(null, { code: ACCESS_CODE }))
+    ).then(fetchIndex)
      .catch(console.error);
 }
 
