@@ -76,6 +76,10 @@ function doSearch(form, event) {
      .catch(console.error);
 }
 
+function fetchIndex() {
+    document.getElementById('search').submit();
+}
+
 
 
 function logout() {
