@@ -38,3 +38,7 @@ article > .img > input {
 article > .img > button:first-child {
     display: none;
 }
+
+#index:empty::after {
+    content: "Nic nenalezeno.";
+}
