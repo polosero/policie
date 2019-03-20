@@ -21,8 +21,7 @@ function updateSubmit(form, event) {
         '/pub/access/486.601/update',
         data
     ).then(response => {
-        fetchIndex()
-        .then(updateClose);
+        fetchIndex();
     }).catch(console.error);
 }
 
@@ -77,6 +76,7 @@ function doSearch(form, event) {
 }
 
 function fetchIndex() {
+    document.getElementById('update-dialog').hidden = true;
     document.getElementById('search').submit();
 }
 
@@ -91,10 +91,6 @@ function updateOpen(data) {
     const form = document.getElementById('update-dialog');
     setValues(form, data);
     form.hidden = false;
-}
-
-function updateClose() {
-    document.getElementById('update-dialog').hidden = true;
 }
 
 
