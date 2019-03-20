@@ -65,8 +65,8 @@ function deleteImage(loreid) {
 }
 
 function doSearch(form, event) {
-    event.preventDefault();
-    event.stopPropagation();
+    event && event.preventDefault();
+    event && event.stopPropagation();
     XHR(
         'PUT',
         '/pub/access/486.601/search',
@@ -77,7 +77,7 @@ function doSearch(form, event) {
 
 function fetchIndex() {
     document.getElementById('update-dialog').hidden = true;
-    document.getElementById('search').submit();
+    doSearch(document.getElementById('search'));
 }
 
 
