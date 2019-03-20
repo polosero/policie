@@ -1,22 +1,13 @@
 ACCESS_CODE = null;
 
 
-function fetchIndex(data) {
-    return XHR(
-        'PUT',
-        '/pub/access/486.601/index',
-        data
-    ).then(drawIndex)
-     .catch(console.error);
-}
-
 function loginSubmit(form, event) {
     event.stopPropagation();
     event.preventDefault();
     const data = extract(form);
     ACCESS_CODE = data.code;
-    fetchIndex(data);
     form.reset();
+    document.getElementById('login').hidden = true;
 }
 
 function updateSubmit(form, event) {
@@ -104,7 +95,6 @@ function updateClose() {
 
 
 function drawIndex(response) {
-    document.getElementById('login').hidden = true;
     const index = document.getElementById('index');
     index.innerHTML = '';
     index.hidden = false;
