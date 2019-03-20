@@ -1,0 +1,40 @@
+.logout {
+    float: right;
+}
+section {
+    border-top: 0.2rem solid gray;
+}
+section > button {
+    margin-left: auto;
+    align-self: center;
+}
+article {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid black;
+    position: relative;
+}
+article > button {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+article > .img {
+    position: relative;
+    min-height: 2rem;
+}
+article > .img > button, article > .img > input {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: none;
+}
+article:hover > .img > button, article:hover > .img > input {
+    display: block;
+}
+article > .img > input {
+    left: 3rem;
+}
+article > .img > button:first-child {
+    display: none;
+}
