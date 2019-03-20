@@ -8,6 +8,7 @@ function loginSubmit(form, event) {
     ACCESS_CODE = data.code;
     form.reset();
     document.getElementById('login').hidden = true;
+    document.getElementById('search').hidden = false;
 }
 
 function updateSubmit(form, event) {
